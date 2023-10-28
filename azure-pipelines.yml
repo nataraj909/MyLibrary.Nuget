@@ -1,7 +1,8 @@
 trigger:
 - master
 
-
+pool:
+  vmImage: windows-latest
 
 stages:
 - stage: Build_Stage
