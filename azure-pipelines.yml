@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Hosted Windows 2019 with VS2019'
+  vmImage: windows-latest
 
 stages:
 - stage: Build_Stage
