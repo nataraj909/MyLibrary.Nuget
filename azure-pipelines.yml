@@ -1,8 +1,7 @@
 trigger:
 - master
 
-pool:
-  name: Pool1
+
 
 stages:
 - stage: Build_Stage
