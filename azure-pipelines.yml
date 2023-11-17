@@ -15,24 +15,28 @@ stages:
     steps:
 
     - task: DotNetCoreCLI@2
+      displayName: dotnet restore
       inputs:
         command: 'restore'
         projects: '**/*.csproj'
         feedsToUse: 'select'
 
     - task: DotNetCoreCLI@2
+      displayName: dotnet build
       inputs:
         command: 'build'
         projects: '**/*.csproj'
         arguments: '--configuration $(BuildConfiguration)'
 
     - task: DotNetCoreCLI@2
+      displayName: dotnet pack
       inputs:
         command: 'pack'
         packagesToPack: '**/*.csproj'
         versioningScheme: 'off'
     
     - task: DotNetCoreCLI@2
+      displayName: push
       inputs:
         command: 'push'
         packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
